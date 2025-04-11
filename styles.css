@@ -110,5 +110,11 @@ font-size: 1.08em;
     line-height: 1.6;
     color: black;
 }
-
+pre {
+font-size:1.4em;
+background-color:rgba(120, 120, 120, 0.4);
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+border-radius:1%;
+padding:20px;
+}
 

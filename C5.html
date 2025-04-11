@@ -235,6 +235,276 @@
         }
     </pre>
 
+</div>
+<div class="card">
+<h1> 1. To Check if input number is prime or not </h1>
+<pre>
+#include &lt;stdio.h&gt;
+int main(){
+	int n, i, count=0;
+	printf("Input a number");
+	scanf("%d",&n);
+	for (i=1;i<=n;i++)
+	{
+		if(n%i==0){
+			count++;
+		}
+	}
+	if(count==2){printf("%d is a prime",n);}
+	else{printf("%d is not a prime",n);
+	}
+	return 0;
+	}
+</pre>
+<h2>Output</h2>
+<img src="output1.png">
+</div>
+<div class="card">
+<h1> 2.To find factorial of give number </h1>
+<pre>
+#include &lt;stdio.h&gt;
+int main()
+{
+	int n,fact=1,i;
+	printf("Enter the number");
+	scanf("%d",&n);
+	if(n<0){printf("Dont put n=0");
+	}
+	else{for (i=n;i>0;i--)
+	{fact=fact*i;
+	}
+	printf("factorial=%d",fact);
+	}
+	return 0;
+}</pre>
+<h2>Output</h2>
+<img src="output2.png">
+</div>
+<div class="card">
+<h1> 3. Check input number is palindrome or not </h1>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int number, originalNumber, rev = 0, remainder;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    originalNumber = number; 
+
+    while (number != 0) {
+        remainder = number % 10; 
+        rev = rev * 10 + remainder; 
+        number = number/10; 
+    }
+
+    if (originalNumber == rev) {
+        printf("%d is a palindrome.\n", originalNumber);
+    } else {
+        printf("%d is not a palindrome.\n", originalNumber);
+    }
+
+    return 0;
+}</pre>
+<h2>Output</h2>
+<img src="output3.png">
+</div>
+
+
+<div class="card">
+<h1> 4. To generate fibbonachi sequence </h1>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n, a = 0, b = 1,c,i;
+
+    printf("Enter the number of Fibonacci terms to generate: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series: ");
+
+    for (i = 0; i < n; i++) {
+        if (i <= 1) {
+           c = i; 
+        } else {
+            c = a+ b; 
+            a= b; 
+           b = c; 
+        }
+        printf("%d , ",c); 
+
+    }
+    return 0;
+}
+</pre>
+<h2>Output</h2>
+<img src="output4.png">
+</div>
+
+<div class="card">
+<h1> 5. To check if input number is perfect number </h1>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int number, sum = 0,i;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &number);
+
+    if (number <= 0) {
+        printf("It is not a perfect number");
+     
+    }
+
+  
+    for ( i = 1; i < number; i++) {
+        if (number % i == 0) {
+            sum += i; 
+        }
+    }
+
+   
+    if (sum == number) {
+        printf("%d is a perfect number.\n", number);
+    } else {
+        printf("%d is not a perfect number.\n", number);
+    }
+
+    return 0;
+}
+</pre>
+<h2>Output</h2>
+<img src="output5.png">
+</div>
+
+<div class="card">
+    <h2>Iterative Control Structures in C</h2>
+    <h3 id="bold">1. for loop</h3>
+    <p><strong>Description:</strong> The <code>for</code> loop is used when the number of iterations is known beforehand.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre>for (initialization; condition; increment/decrement) {
+    // Code to be executed
+}</pre>
+    <p><strong>Example:</strong></p>
+    <pre>for (int i = 0; i &lt; 5; i++) {
+    printf("%d\n", i);
+}</pre>
+    <p>This loop prints the values from 0 to 4.</p>
+
+    <h3 id="bold">2. while loop</h3>
+    <p><strong>Description:</strong> The <code>while</code> loop is used when the number of iterations is not known and depends on a condition.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre>while (condition) {
+    // Code to be executed
+}</pre>
+    <p><strong>Example:</strong></p>
+    <pre>int i = 0;
+while (i &lt; 5) {
+    printf("%d\n", i);
+    i++;
+}</pre>
+    <p>This loop also prints the values from 0 to  4.</p>
+
+    <h3 id="bold">3. do-while loop</h3>
+    <p><strong>Description:</strong> The <code>do-while</code> loop guarantees that the block of code will execute at least once.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre>do {
+    // Code to be executed
+} while (condition);</pre>
+    <p><strong>Example:</strong></p>
+    <pre>int i = 0;
+do {
+    printf("%d\n", i);
+    i++;
+} while (i &lt; 5);</pre>
+    <p>This loop will also print the values from 0 to 4.</p>
+</div> 
+
+
+<div class="card">
+    <h1 >Arrays in C</h2>
+    <p>An array is a collection of elements of the same type.</p>
+<h3 id="bold">Characteristics</h3>
+    
+        <p>Fixed Size</p>
+        <p>Homogeneous Elements</p>
+        <p>Zero-Based Indexing</p>
+        <p>Contiguous Memory Allocation</p>
+    <h3 id="bold">Types of Arrays</h3>
+    <ul>
+        <li>One-Dimensional Array</li>
+        <li>Two-Dimensional Array</li>
+        <li>Multi-Dimensional Array</li>
+    </ul>
+    <h3 id="bold">Syntax</h3>
+    <ul>
+        <li>One-Dimensional: <code>data_type array_name[array_size];</code></li>
+        <li>Two-Dimensional: <code>data_type array_name[row_size][column_size];</code></li>
+        <li>Multi-Dimensional: <code>data_type array_name[size1][size2][size3]...;</code></li>
+    </ul>
+    <h3 id="bold">Example Code</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    // One-Dimensional Array
+    int oneDArray[5] = {1, 2, 3, 4, 5};
+    
+    // Two-Dimensional Array
+    int twoDArray[3][3] = {
+        {1, 2, 3},
+        {4 , 5, 6},
+        {7, 8, 9}
+    };
+    
+    // Multi-Dimensional Array
+    int multiDArray[2][2][2] = {
+        {
+            {1, 2},
+            {3, 4}
+        },
+        {
+            {5, 6},
+            {7, 8}
+        }
+    };
+
+    // Print One-Dimensional Array
+    printf("One-Dimensional Array:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", oneDArray[i]);
+    }
+    printf("\n");
+
+    // Print Two-Dimensional Array
+    printf("Two-Dimensional Array:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", twoDArray[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Print Multi-Dimensional Array
+    printf("Multi-Dimensional Array:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 2; k++) {
+                printf("%d ", multiDArray[i][j][k]);
+            }
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
+</pre>
+
+  
+</div>
   </div>
 </body>
 </html>
